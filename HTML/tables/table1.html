@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Table One</title>
 </head>
+
 <body>
-  <table>
-    <thead>some head of table</thead>
+  <table border="1">
+    <tr>
+      <th rowspan="3">Day</th>
+      <th colspan="3">Seminar</th>
+    </tr>
+    <tr>
+      <th colspan="2">Schedule</th>
+      <th rowspan="2">Topic</th>
+    </tr>
+    <tr>
+      <th>Begin</th>
+      <th>End</th>
+    </tr>
+    <tr>
+      <td rowspan="2">Monday</td>
+      <td rowspan="2">8:00 a.m.</td>
+      <td rowspan="2">5:00 p.m.</td>
+      <td align="center">Introduction to XML</td>
+    </tr>
+    <tr>
+      <td>Validity: DTD and Relax NG</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Tuesday</td>
+      <td>8:00 a.m.</td>
+      <td>11:00 p.m.</td>
+      <td rowspan="2" align="center" style="padding: 8px 0">XPath</td>
+    </tr>
+    <tr>
+      <td rowspan="2">11:00 a.m.</td>
+      <td rowspan="2">2:00 p.m.</td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center">XSL Transformations</td>
+    </tr>
+    <tr>
+      <td>2:00 p.m.</td>
+      <td>5:00 p.m.</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td>8:00 a.m.</td>
+      <td>12:00 p.m.</td>
+      <td align="center">XSL Formatting Objects</td>
+    </tr>
   </table>
 </body>
+
 </html>
