@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form One</title>
+</head>
+
+<body>
+  <form style="border: 4px solid #C7CCD2; padding: 12px; display: inline-block;">
+
+    <h1>BILLING ADDRESS - BLUE NILE</h1>
+
+    <p style="color: red">
+      &bull; Please enter a valid zip code for your region.
+    </p>
+    <div style="background-color: #EDF6FD; margin-bottom: 10px;">
+      <h2 style="display:inline-block; margin-right: 100px;">
+        Would you like to create a Blue Nile Account and store this information
+      </h2>
+      <input type="radio" name="create_account" id="yes">
+      <label for="yes" style="margin-right: 60px">Yes</label>
+      <input type="radio" name="create_account" id="no" checked>
+      <label for="no" style="margin-right: 60px">No</label> 
+    </div>
+
+    <!-- main-content  -->
+    <div>
+      <!-- left-content  -->
+      <div style="display: inline-block;width: 49%;">
+        <div style="background-color: rgb(231, 220, 220); display: inline-block; text-align: right; padding-right: 40px;">
+          <div style="margin-bottom: 8px;">
+            <span style="color: #6C4A54">&bigstar;</span>
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" placeholder="John" style="width: 200px">
+          </div>
+          <div style="margin-bottom: 8px;">
+            <span style="color: #6C4A54">&bigstar;</span>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="Last_name" placeholder="Newman" style="width: 200px">
+          </div>
+          <div style="margin-bottom: 8px;">
+            <label for="company">Company</label>
+            <input type="text" id="company" style="width: 200px">
+          </div>
+          <div style="margin-bottom: 8px">
+            <div style="display: inline-block; vertical-align: top;">
+              <span style="color: #6C4A54">&bigstar;</span>
+              <label for="phone" style="display: inline-block;">Phone</label>
+            </div>
+            <div style="display:inline-block; text-align: left;">
+              <input type="number" id="phone" placeholder="John" style="width: 87px">
+              <em style="display: block;">Phone Number</em>
+            </div>
+            <div style="display:inline-block; text-align: left;">
+              <input type="number" id="first_name" style="width: 40px">
+              <em style="display: block;">Ext.</em>
+            </div>
+            <div style="display: inline-block; text-align: left;">
+              <a href="#">
+                Intl. <br> number?
+              </a>
+            </div>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <span style="color: #6C4A54">&bigstar;</span>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="John.newman@baymard.com" style="width: 200px">
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="display: inline-block; vertical-align: top;">
+              <span style="color: #6C4A54">&bigstar;</span>
+              <label for="email">Re-type E-mail</label>
+            </div>
+            <div style="display: inline-block;">
+              <input type="email" id="email" placeholder="John.newman@baymard.com" style="width: 200px">
+            </div>
+            <div style="display: inline-block; width: 230px;">
+              <em>
+                Enter an address where we can send e-mail confirming your order
+              </em>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- right-content  -->
+      <div style="display: inline-block;width: 49%; text-align: right;">
+        <div style="background-color: rgb(231, 220, 220); display: inline-block; padding-right: 40px;">
+          <div style="margin-bottom: 8px;">
+            <span style="color: #6C4A54">&bigstar;</span>
+            <label for="ADDRESS">Address</label>
+            <input type="text" id="address" placeholder="2125 Chestrut st" style="width: 200px">
+          </div>
+          <div style="margin-bottom: 8px;">
+            <input type="text" id="address_1" style="width: 200px">
+          </div>
+          <div style="margin-bottom: 8px;">
+            <span style="color: #6C4A54">&bigstar;</span>
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="San Francisco" style="width: 200px">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
