@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Two</title>
+</head>
+
+<body>
+  <div style="border: 2px solid #CFD6DC; padding: 10px 16px; width: 768px;">
+    <section style="border: 2px solid #CFD6DC">
+      <div style="overflow: hidden; background-color: #F7F7F7; padding: 10px;">
+        <div style="float: left;">
+          <select id="record" style="border: none; background-color: transparent;">
+            <option>Record</option>
+          </select>
+        </div>
+        <div style="float: right;">
+          <label for="view_record">View: </label>
+          <select id="view_record" style="background-color: transparent; font-weight: bold;">
+            <option value="">
+              <b>Review Orders</b>
+            </option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section style="overflow:hidden; padding: 12px 0 0;">
+      <div style="float: left">
+        <div>
+          <span>&#8679;</span>
+          <span>&#8681;</span>
+          <span>&sstarf;</span>
+          <span>-</span>
+          <span>indicates a required field</span>
+        </div>
+      </div>
+      <div style="float:right">
+        <button style="margin-right: 10px">OK</button>
+        <button style="margin-right: 10px">Delete</button>
+        <button>Cancel</button>
+      </div>
+    </section>
+    <hr>
+    <form style="padding-left: 20px">
+      <div style="overflow: hidden">
+        <div style="float: left;">
+          <div style="margin-bottom: 10px">
+            <label for="customer" style="margin-right: 33px">
+              <b>Customer: </b>
+            </label>
+            <input type="text" id="customer" placeholder="Bon app &apos;  &rect;" style="width: 50%">
+            <span>&FilledSmallSquare;</span>
+          </div>
+          <div style="margin-bottom: 10px">
+            <label for="employee" style="margin-right: 33px;">
+              <b>Employee: </b>
+            </label>
+            <input type="text" id="employee" placeholder="Bon app &apos;  &rect;" style="width: 50%">
+            <span>&FilledSmallSquare;</span>
+          </div>
+          <div style="margin-bottom: 10px">
+            <label for="order_date" style="margin-right: 23px">
+              <b>Order Date: </b>
+            </label>
+            <input type="date" id="order_date" value="1998-05-06">
+            <span>&#128197;</span>
+          </div>
+          <div style="margin-bottom: 10px; display: inline-flex;">
+            <label for="required_date" style="width: 111px; display: inline-block">
+              <b>Required <br> Date: </b>
+            </label>
+            <input type="date" id="order_date" value="1998-06-03">
+            <span>&#128197;</span>
+          </div>
+          <div style="margin-bottom: 10px">
+            <label for="required_date" style="margin-right: 10px;">
+              <b>Shipped Date: </b>
+            </label>
+            <input type="date" id="order_date" value=" ">
+            <span>&#128197;</span>
+          </div>
+        </div>
+        <div style="float: right;text-align: left;">
+          <div style="margin-bottom: 12px">
+            <label for="address" style="margin-right: 36px;">
+              <b>Address: </b>
+            </label>
+            <input type="text" id="address" placeholder="12, rue des Bouchers" style="direction: rtl; width: 200px">
+          </div>
+          <div style="margin-bottom: 12px">
+            <label for="city" style="margin-right: 62px;">
+              <b>City: </b>
+            </label>
+            <input type="text" id="city" placeholder="Marseille" style="direction: rtl; width: 200px">
+          </div>
+          <div style="margin-bottom: 13px">
+            <label for="region" style="margin-right: 44px;">
+              <b>Region: </b>
+            </label>
+            <input type="text" id="region" style="direction: rtl; width: 200px">
+          </div>
+          <div style="margin-bottom: 13px">
+            <label for="postal_code" style="margin-right: 10px;">
+              <b>Postal Code:</b>
+            </label>
+            <input type="number" id="postal_code" placeholder="13008" style="direction: rtl; width: 200px">
+          </div>
+          <div style="margin-bottom: 13px">
+            <label for="ship_country">
+              <b>Ship Country: </b>
+            </label>
+            <input type="text" id="ship_country" placeholder="France" style="direction: rtl; width: 200px">
+          </div>
+        </div>
+      </div>
+    </form>
+    <section>
+      <div style="border: 1px solid #CECACA; padding: 6px;">
+        <div style="background-color: #F7F7F7;  border: 1px solid #CECACA;">
+          <span>&DownArrow;</span>
+          <input type="search" value="cha" style="margin-right: 10px;">
+          <span>&FilledSmallSquare;</span>
+          <span style="text-decoration:none; margin-right: 26px">New Order Details</span>
+          <select id="record" style="border: none; background-color: transparent;">
+            <option>Actions</option>
+          </select>
+        </div>
+        <table style="margin-top: 10px">
+          <tr>
+            <th align="left">Product Name</th>
+            <th align="left">Unit Price</th>
+            <th align="left">Quantity</th>
+            <th align="right" style="padding-left: 10px">Discount</th>
+            <th align="left">Product <br>Category Name</th>
+            <th align="left">Product Supplier <br> Company Name</th>
+            <th align="left" style="width: 110px">Extended Price</th>
+          </tr>
+          <tr>
+            <th align="left" style="padding-bottom: 12px">Grandma's <br>Boysenberry Spread</th>
+            <td align="left">$25.00</td>
+            <td align="left">20</td>
+            <td align="right">25.00 %</td>
+            <td align="left">Condiments</td>
+            <td align="left">Grandma Kelly's Homestead</td>
+            <td align="right">$375.00</td>
+          </tr>
+          <tr>
+            <th align="left" style="padding-bottom: 12px">Tofu</th>
+            <td align="left">$23.25</td>
+            <td align="left">20</td>
+            <td align="right">25.00 %</td>
+            <td align="left">Produce</td>
+            <td align="left">Mayumi's</td>
+            <td align="right">$348.75</td>
+          </tr>
+          <tr>
+            <th align="left">Teatime Chocolate Biscuits</th>
+            <td align="left">$9.20</td>
+            <td align="left">10</td>
+            <td align="right">25.00 %</td>
+            <td align="left">Confections</td>
+            <td align="left">Specialty Biscuits, <br> Ltd.</td>
+            <td align="right">$69.00</td>
+          </tr>
+        </table>
+        <hr style="border: 1px dashed #CECACA;">
+        <div style="overflow: hidden">
+          <div style="float: left; padding-left: 140px;">
+              Avg: $19.15 &emsp; Sum: 50; &emsp; Avg: 25.00%
+          </div>
+          <div style="float: right">     
+              Sum: $792.75
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <div style="overflow: hidden; margin-top: 20px">
+      <div style="float: left; padding-top: 22px">
+        <div style="margin-bottom: 10px">
+          <label for="ship_name" style="margin-right: 20px">
+            <b>Ship Name: </b>
+          </label>
+          <input type="text" placeholder="Bon app '" id="ship_name" style="width: 200px">
+        </div>
+        <div style="margin-bottom: 10px">
+          <label for="ship_via" style="margin-right: 20px">
+            <b>Ship Via: </b>
+            &nbsp;&nbsp;&nbsp;
+          </label>
+          <select id="ship_via">
+            <option>United Package</option>
+          </select>
+        </div>
+      </div>
+      <div style="float: right">
+        <div style="margin-bottom: 10px;">
+          <b>Subtotal: &emsp;&emsp;</b>
+          <span>$792.75</span>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <b>Subtotal: &emsp;&emsp;</b>
+          <button>$38.28</button>
+        </div>
+        <div style="margin-bottom: 10px;">
+          <b>Total: &emsp;&emsp;&emsp;&emsp;</b>
+          <span>$831.03</span>
+        </div>
+      </div>
+    </div>
+    <hr style="border: 2px solid #CECACA">
+    <section style="overflow:hidden;">
+      <div style="float: left">
+        <div>
+          <span>&#8679;</span>
+          <span>&#8681;</span>
+          <span>&sstarf;</span>
+          <span>-</span>
+          <span>indicates a required field</span>
+        </div>
+      </div>
+      <div style="float:right">
+        <button style="margin-right: 10px">OK</button>
+        <button style="margin-right: 10px">Delete</button>
+        <button>Cancel</button>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
