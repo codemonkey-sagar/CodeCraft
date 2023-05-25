@@ -30,7 +30,7 @@
     <div>
       <!-- left-content  -->
       <div style="display: inline-block;width: 49%;">
-        <div style="background-color: rgb(231, 220, 220); display: inline-block; text-align: right; padding-right: 40px;">
+        <div style="display: inline-block; text-align: right; padding-right: 40px;">
           <div style="margin-bottom: 8px;">
             <span style="color: #6C4A54">&bigstar;</span>
             <label for="first_name">First Name</label>
@@ -88,7 +88,7 @@
       
       <!-- right-content  -->
       <div style="display: inline-block;width: 49%; text-align: right;">
-        <div style="background-color: rgb(231, 220, 220); display: inline-block; padding-right: 40px;">
+        <div style="display: inline-block; padding-right: 135px;">
           <div style="margin-bottom: 8px;">
             <span style="color: #6C4A54">&bigstar;</span>
             <label for="ADDRESS">Address</label>
@@ -102,9 +102,54 @@
             <label for="city">City</label>
             <input type="text" id="city" placeholder="San Francisco" style="width: 200px">
           </div>
+          <div style="margin-bottom: 8px;">
+            <span style="color: #6C4A54">&bigstar;</span>
+            <label for="state">State</label>
+            <select id="state" style="width: 200px">
+              <option value="CA-California">CA--California</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 8px; height: 24px; color:red;">
+            <span style="color: #6C4A54">&bigstar;</span>
+            <label for="zip">Zip Code</label>
+            <select id="zip" style="width: 200px; height: 24px; border-color: red">
+              <option value="9412w">9412w</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <span style="color: #6C4A54">&bigstar;</span>
+            <label for="zip">Country</label>
+            <select id="zip" style="width: 200px; height: 24px;">
+              <option value="united state">United State</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <div style="display: inline-block; margin-right: 7px;">
+              <span style="color: #6C4A54">&bigstar;</span>
+              <label for="address_type" >Address Type</label>
+            </div>
+            <div style="display:inline-block; margin-top: 16px;">
+              <input type="radio" name="address_type">
+              <label for="home" style="margin-right: 36px">Home</label>
+              <input type="radio" name="address_type">
+              <label for="bussiness">Bussiness</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div>
+      <h3 style="display: inline-block; margin-right: 120px;">
+        Are you shipping this order to your billing address?
+      </h3>
+      <input type="radio" name="billing_address" id="billing" checked>
+      <label for="billing" style="margin-right: 40px;">Yes</label>
+      <input type="radio" name="billing_address" id="billing">
+      <label for="billing">No</label>
+    </div>
+
+
   </form>
 </body>
 
