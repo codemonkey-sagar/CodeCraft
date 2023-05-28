@@ -7,4 +7,4 @@
 ![Form 2](https://github.com/codemonkey-sagar/CodeCraft/blob/main/HTML/forms/img/form2.png)  
 
 3. **Form 3**  
-![Form 3](https://github.com/codemonkey-sagar/CodeCraft/blob/main/HTML/forms/mg/form3.png)
+![Form 3](https://github.com/codemonkey-sagar/CodeCraft/blob/main/HTML/forms/img/form3.png)
