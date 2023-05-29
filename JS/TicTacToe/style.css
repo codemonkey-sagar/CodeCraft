@@ -1,19 +1,29 @@
-body {
-  padding: 10px;
-  color: #FFF;
-  background-color: #000;
+html{
   box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-nav {
-  display: flex;
-  height: 10vh;
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav a {
+  padding: 20px;
+  display: inline-block;
 }
 
 nav img {
   height: 44px;
-  width: 44px;
 }
 
 main {
@@ -21,16 +31,16 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 100px;
+  gap: 5rem;
 }
 
 .board {
-  max-width: 50%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  background-color: #FFF;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 6px;
+  color: black;
+  background-color: white;
 }
 
 .cell {
@@ -39,20 +49,19 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+  color: white;
+  background-color: black;
 }
 
 .scores {
-  color: #FFF;
-  font-size: 20px;
   display: flex;
-  justify-content: space-around;
+  gap: 5rem;
+  color: white;
+  font-size: 30px;
   text-align: center;
-  width: 50%;
 }
 
 .score {
-  display: block;
-  font-size: 50px;
-  padding-top: 10px;
+  font-size: 60px;
+  font-weight: bold;
 }
