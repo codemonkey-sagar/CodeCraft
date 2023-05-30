@@ -17,13 +17,22 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-nav a {
+nav {
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
-  display: inline-block;
 }
 
 nav img {
   height: 44px;
+}
+
+nav .sound {
+  height: 44px;
+}
+
+.sound svg {
+  height: inherit;
 }
 
 main {
@@ -47,9 +56,11 @@ main {
   height: 200px;
   width: 200px;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   color: white;
+  font-size: 160px;
   background-color: black;
 }
 
@@ -72,6 +83,7 @@ main {
   .cell {
     width: 120px;
     height: 120px;
+    font-size: 90px;
   }
 
   .scores {
