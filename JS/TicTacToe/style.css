@@ -59,9 +59,26 @@ main {
   color: white;
   font-size: 30px;
   text-align: center;
+  align-items: center;
 }
 
 .score {
   font-size: 60px;
   font-weight: bold;
+}
+
+/* responsive design  */
+@media screen and (max-width: 620px) {
+  .cell {
+    width: 120px;
+    height: 120px;
+  }
+
+  .scores {
+    font-size: 24px;
+  }
+
+  .score {
+    font-size: 40px;
+  }
 }
