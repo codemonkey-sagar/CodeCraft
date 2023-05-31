@@ -1,4 +1,5 @@
-let currentPlayer = "X";    // starting player
+// starting player
+let currentPlayer = "X";
 
 // Player scores 
 let playerXScore = 0;
