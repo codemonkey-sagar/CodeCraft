@@ -1,0 +1,41 @@
+{
+  "name": "adopt_me",
+  "version": "1.0.0",
+  "description": "adopt_me: Simplifying pet adoption by connecting families with their perfect furry match",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:client": "vite build --outDir ../dist/client",
+    "build:server": "vite build --outDir ../dist/server --ssr ServerApp.jsx",
+    "build": "npm run build:client && npm run build:server",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.23",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.2"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^4.29.5",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.10.0"
+  }
+}
