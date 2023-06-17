@@ -20,8 +20,8 @@ for (let i = 1; i <= 10; i++) {
     p.textContent = `${i} x ${j} = ${i * j}`;
     div.appendChild(p);
   }
+
   section.appendChild(div);
-  console.log(div)
   div.style.cssText = `
     border-radius: 10px;
     background-color: rgb(${Math.random() * 500}, ${Math.random() * 500}, ${Math.random() * 50});
