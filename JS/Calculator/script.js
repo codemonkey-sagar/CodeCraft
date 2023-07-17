@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // update screen width 
   const updateScreenWidth = () => {
     const keysWidth = keys.offsetWidth;
-    screen.style.width = `${keysWidth}px`
+    screen.style.width = `${keysWidth}px`;
   };
   updateScreenWidth();
 
@@ -69,3 +69,5 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   
 });
+
+
