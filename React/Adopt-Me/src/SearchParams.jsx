@@ -1,30 +1,81 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Pet from "./Pet";
 
-//custom hook to manage a counter
-function useCounter(initialCount = 0, step = 1) {
-  const [count, setCount] = useState(initialCount);
+const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
-  const increment = () => {
-    setCount((previousCount) => previousCount + step);
-  };
+const SearchParams = () => {
+  const [location, setLocation] = useState("Seattle, WA");
+  const [animal, setAnimal] = useState("");
+  const [breed, setBreed] = useState("");
+  const [pets, setPets] = useState([]);
+  const breeds = [""];
 
-  const decrement = () => {
-    setCount((previousCount) => previousCount - step);
-  };
+  useEffect(() => {
+    requestPets();
+  }, []);
 
-  return { count, increment, decrement };
-}
-
-function Counter() {
-  const { count, increment, decrement } = useCounter(0, 1);
+  async function requestPets() {
+    const response = await fetch(
+      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`,
+    );
+    const json = await response.json();
+    setPets(json.pets);
+  }
 
   return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
+    <div className="search-params">
+      <form>
+        <label htmlFor="location">
+          Location
+          <input
+            id="location"
+            value={location}
+            placeholder="Location"
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </label>
+        <label htmlFor="animal">
+          Animal
+          <select
+            id="animal"
+            value={animal}
+            onChange={(e) => {
+              setAnimal(e.target.value);
+              setBreed("");
+            }}
+          >
+            <option />
+            {ANIMALS.map((animal) => (
+              <option key={animal}>{animal}</option>
+            ))}
+          </select>
+        </label>
+        <label htmlFor="breed">
+          Breed
+          <select
+            id="breed"
+            value={breed}
+            disabled={breeds.length === 0}
+            onChange={(e) => setBreed(e.target.value)}
+          >
+            <option />
+            {breeds.map((breed) => (
+              <option key={breed}>{breed}</option>
+            ))}
+          </select>
+        </label>
+        <button>Submit</button>
+      </form>
+      {pets.map((pet) => (
+        <Pet
+          key={pet.id}
+          name={pet.name}
+          animal={pet.animal}
+          breed={pet.breed}
+        />
+      ))}
     </div>
   );
-}
+};
 
-export default Counter;
+export default SearchParams;
