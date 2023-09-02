@@ -2,31 +2,71 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- link to fontfamily, favicon and stylesheet  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <title>Brand SignUp Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link to google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- link to font awesome  -->
+    <script src="https://kit.fontawesome.com/8142082953.js" crossorigin="anonymous"></script>
+    <!-- link to css  -->
+    <link rel="stylesheet" href="style.css">
+    <title>Brand Form</title>
 </head>
 
 <body>
-  <div class="container">
-    <div class="heading">JavaScript 
-      <span>Form Validation</span>
+    <div class="container">
+        <div class="heading">
+            JavaScript
+            <span>Form Validation</span>
+        </div>
+        <div class="form">
+            <div class="form-left">
+                <h1>Brand <span>.</span></h1>
+                <p>Start for free & Get <br>Attrative offers Today!</p>
+            </div>
+            <div class="form-right">
+                <div class="form-right-top">
+                    <span class="get-start">Get Started</span>
+                    <h3>Already have a account?</h3>
+                    <h3 class="red">Log In</h3>
+                    <div class="box">
+                        <div class="signup-box">
+                            <i class="fa-brands fa-google"></i>
+                            <span>sign up</span>
+                        </div>
+                        <div class="signup-box bg-blue">
+                            <i class="fa-brands fa-square-facebook"></i>
+                            <span>sign up</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="or">Or</div>
+                <form class="input-form">
+                    <label for="name">Name</label>
+                    <div class="input-icon">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" placeholder="Abhay Thapa" class="border-red">
+                    </div>
+
+                    <label for="email">Email</label>
+                    <div class="input-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="abc@gmail.com" class="border-red">
+                    </div>
+
+                    <label for="password">Password</label>
+                    <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class="border-red">
+                    </div>
+
+                    <button class="submit" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <form>
-      <div class="form-left">
-        <h1>Brand.</h1>
-        <p>Start for free & Get Attractive offers Today!</p>
-      </div>
-      <div class="form-right">
-        right side
-      </div>
-    </form>
-  </div>
 </body>
 
 </html>
