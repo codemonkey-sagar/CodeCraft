@@ -5,13 +5,13 @@ const BREEDS = ["affenpinscher", "african", "airedale", "akita", "appenzeller", 
 
 // Utility function to get a randomly selected item from an array
 function getRandomElement(array) {
-    const i = Math.floor(Math.random() * array.length);
-    return array[i];
+  const i = Math.floor(Math.random() * array.length);
+  return array[i];
 }
 
 // Utility function to shuffle the order of items in an array in-place
 function shuffleArray(array) {
-    return array.sort((a,b) => Math.random() - 0.5);
+  return array.sort((a, b) => Math.random() - 0.5);
 }
 
 
@@ -20,20 +20,20 @@ function shuffleArray(array) {
 // Given an array of possible answers, a correct answer value, and a number of choices to get,
 // return a list of that many choices, including the correct answer and others from the array
 function getMultipleChoices(n, correctAnswer, possibleChoices) {
-    // Use a while loop and the getRandomElement() function
-    // Make sure there are no duplicates in the array
+  // Use a while loop and the getRandomElement() function
+  // Make sure there are no duplicates in the array
 
-    const choices = [];
-    choices.push(correctAnswer);
-    while (choices.length < n) {
-      let candidate = getRandomElement(possibleChoices);
+  const choices = [];
+  choices.push(correctAnswer);
+  while (choices.length < n) {
+    let candidate = getRandomElement(possibleChoices);
 
-      if (!choices.includes(candidate)){
-        choices.push(candidate)
-      }
+    if (!choices.includes(candidate)) {
+      choices.push(candidate)
     }
+  }
 
-    return shuffleArray(choices)
+  return shuffleArray(choices)
 
 }
 
@@ -42,9 +42,12 @@ function getMultipleChoices(n, correctAnswer, possibleChoices) {
 // Given a URL such as "https://images.dog.ceo/breeds/poodle-standard/n02113799_2280.jpg"
 // return the breed name string as formatted in the breed list, e.g. "standard poodle"
 function getBreedFromURL(url) {
-    // The string method .split(char) may come in handy
-    // Try to use destructuring as much as you can
-    
+  // The string method .split(char) may come in handy
+  // Try to use destructuring as much as you can
+  let unsplitBreed = url.split("/")[4];
+  let [breed, subBreed] = unsplitBreed.split("-");
+
+  return [subBreed, breed].join(" ").trim();
 }
 
 
@@ -54,61 +57,77 @@ function getBreedFromURL(url) {
 // then parse the response as a JSON object,
 // finally return the "message" property of its body
 async function fetchMessage(url) {
-    
+  const response = await fetch(url);
+  const body = await response.json();
+  const { message } = body;
+
+  return message;
 }
 
 
 // Function to add the multiple-choice buttons to the page
 function renderButtons(choicesArray, correctAnswer) {
 
-    // Event handler function to compare the clicked button's value to correctAnswer
-    // and add "correct"/"incorrect" classes to the buttons as appropriate
-    function buttonHandler(e) {
-        if (e.target.value === correctAnswer) {
-            e.target.classList.add("correct");
-        } else {
-            e.target.classList.add("incorrect");
-            document.querySelector(`button[value="${correctAnswer}"]`).classList.add("correct");
-        }
+  // Event handler function to compare the clicked button's value to correctAnswer
+  // and add "correct"/"incorrect" classes to the buttons as appropriate
+  function buttonHandler(e) {
+    if (e.target.value === correctAnswer) {
+      e.target.classList.add("correct");
+    } else {
+      e.target.classList.add("incorrect");
+      document.querySelector(`button[value="${correctAnswer}"]`).classList.add("correct");
     }
+  }
 
-    const options = document.getElementById("options"); // Container for the multiple-choice buttons
+  const options = document.getElementById("options"); // Container for the multiple-choice buttons
 
-    // TODO 4
-    // For each of the choices in choicesArray,
-    // Create a button element whose name, value, and textContent properties are the value of that choice,
-    // attach a "click" event listener with the buttonHandler function,
-    // and append the button as a child of the options element
-    
+  // TODO 4
+  // For each of the choices in choicesArray,
+  // Create a button element whose name, value, and textContent properties are the value of that choice,
+  // attach a "click" event listener with the buttonHandler function,
+  // and append the button as a child of the options element
+
+  for (let choice of choicesArray) {
+    const button = document.createElement("button");
+    button.textContent = choice;
+    button.value = choice;
+    button.name = choice;
+
+    button.addEventListener("click", buttonHandler); 
+    options.appendChild(button)
+  }
+
 }
 
 
 // Function to add the quiz content to the page
 function renderQuiz(imgUrl, correctAnswer, choices) {
-    const image = document.createElement("img");
-    image.setAttribute("src", imgUrl);
-    const frame = document.getElementById("image-frame");
+  const image = document.createElement("img");
+  image.setAttribute("src", imgUrl);
+  const frame = document.getElementById("image-frame");
 
-    image.addEventListener("load", () => {
-        // Wait until the image has finished loading before trying to add elements to the page
-        frame.replaceChildren(image);
-        renderButtons(choices, correctAnswer);
-    })
-    
+  image.addEventListener("load", () => {
+    // Wait until the image has finished loading before trying to add elements to the page
+    frame.replaceChildren(image);
+    renderButtons(choices, correctAnswer);
+  })
+
 }
 
 // Function to load the data needed to display the quiz
 async function loadQuizData() {
-    document.getElementById("image-frame").textContent = "Fetching doggo...";
-    
-    const doggoImgUrl = await fetchMessage(RANDOM_IMG_ENDPOINT);
-    const correctBreed = getBreedFromURL(doggoImgUrl);
-    const breedChoices = getMultipleChoices(3, correctBreed, BREEDS);
+  document.getElementById("image-frame").textContent = "Fetching doggo...";
 
-    return [doggoImgUrl, correctBreed, breedChoices];
+  const doggoImgUrl = await fetchMessage(RANDOM_IMG_ENDPOINT);
+  const correctBreed = getBreedFromURL(doggoImgUrl);
+  const breedChoices = getMultipleChoices(3, correctBreed, BREEDS);
+
+  return [doggoImgUrl, correctBreed, breedChoices];
 }
 
 // TODO 5
 // Asynchronously call the loadQuizData() function,     
 // Then call renderQuiz() with the returned imageUrl, correctAnswer, and choices 
 
+const [imageUrl, correctAnswer, choices] = await loadQuizData();
+renderQuiz(imageUrl, correctAnswer, choices);
