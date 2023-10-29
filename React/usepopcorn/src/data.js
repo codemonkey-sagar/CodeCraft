@@ -1,3 +1,4 @@
+// NOTE: Initial testing data 
 export const tempMovieData = [
   {
     imdbID: "tt1375666",

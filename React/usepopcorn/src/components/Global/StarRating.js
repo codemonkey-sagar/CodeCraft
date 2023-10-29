@@ -5,11 +5,11 @@ const containerStyle = {
   display: "flex",
   alignItems: "center",
   gap: "16px",
-}
+};
 
 const starContainerStyle = {
   display: "flex",
-}
+};
 
 StarRating.propTypes = {
   maxRating: PropTypes.number,
@@ -19,8 +19,7 @@ StarRating.propTypes = {
   messages: PropTypes.array,
   defaultRating: PropTypes.number,
   onSetRating: PropTypes.func,
-}
-
+};
 
 export default function StarRating({ maxRating = 5, color = "#fcc419", size = 48, className = "", messages = [], defaultRating = 0, onSetRating }) {
   const [rating, setRating] = useState(defaultRating);
@@ -36,7 +35,7 @@ export default function StarRating({ maxRating = 5, color = "#fcc419", size = 48
     margin: "0",
     color,
     fontSize: `${size / 1.5}px`
-  }
+  };
 
 
   return (
@@ -59,7 +58,7 @@ function Star({ onRate, full, onHoverIn, onHoverOut, color, size }) {
     height: `${size}px`,
     display: "block",
     cursor: "pointer",
-  }
+  };
 
   return (
     <span role="button" style={starStyle} onClick={onRate} onMouseEnter={onHoverIn} onMouseLeave={onHoverOut}>

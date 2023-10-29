@@ -3,5 +3,5 @@ export default function Main({ children }) {
     <main className="main">
       {children}
     </main>
-  )
+  );
 }
