@@ -2,7 +2,12 @@ import { useState } from "react";
 import { useGeolocation } from "./useGeolocation";
 
 export default function App() {
-  const { isLoading, position: { lat, lng }, error, getPosition } = useGeolocation();
+  const {
+    isLoading,
+    position: { lat, lng },
+    error,
+    getPosition,
+  } = useGeolocation();
 
   const [countClicks, setCountClicks] = useState(0);
 
@@ -21,7 +26,7 @@ export default function App() {
       {error && <p>{error}</p>}
       {!isLoading && !error && lat && lng && (
         <p>
-          Your GPS position:{" "}
+          Your GPS position:
           <a
             target="_blank"
             rel="noreferrer"
